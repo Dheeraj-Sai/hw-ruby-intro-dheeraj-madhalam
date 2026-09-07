@@ -4,14 +4,24 @@
 
 def sum(arr)
   # YOUR CODE HERE
+  arr.sum
 end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr[0] if arr.length == 1
+  arr.max(2).sum
 end
 
 def sum_to_n?(arr, number)
   # YOUR CODE HERE
+  arr.each_with_index do |value, index|
+    arr[(index + 1)..].each do |other_value|
+      return true if value + other_value == number
+    end
+  end
+  false
 end
 
 # Part 2
